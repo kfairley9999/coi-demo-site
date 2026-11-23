@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Live demo of Kevin Fairley’s ACORD 25 certificate-of-insurance extraction tool. Public sample certificates, precomputed fields, honest benchmark results, and a free 30-day pilot.">
+  <title>Certificate extraction — Kevin Fairley</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#demo">Skip to live demo</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="wordmark" href="#top">COI <span>Extract</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#demo">Demo</a>
+        <a href="#results">Results</a>
+        <a href="#pilot">Pilot</a>
+        <a href="#plans">Plans</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">ACORD 25 &nbsp;·&nbsp; Kevin Fairley &nbsp;·&nbsp; Los Angeles</p>
+        <h1>Read the certificate.<br><em>Trust the flags.</em></h1>
+        <p class="lede">A live look at an ACORD 25 extraction tool built for independent insurance agencies. The fields below were extracted from publicly posted certificates with free local tools — no file upload, and no client data on this page. Digital forms come through clean. Scans are flagged so a person on our team can review them.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#demo">Open the live demo</a>
+          <a class="btn btn-ghost" href="#results">See the benchmark</a>
+        </div>
+        <dl class="stat-strip">
+          <div>
+            <dt>93.2%</dt>
+            <dd>Field accuracy, Test 1, 44 public certificates</dd>
+          </div>
+          <div>
+            <dt>90.3%</dt>
+            <dd>Field accuracy, Test 2, 36 certificates</dd>
+          </div>
+          <div>
+            <dt>100%</dt>
+            <dd>Accuracy on born-digital PDFs in Test 2</dd>
+          </div>
+          <div>
+            <dt>69.5%</dt>
+            <dd>Accuracy on scans — every scan flagged for a person</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="wrap">
+        <p class="section-kicker">Live demo</p>
+        <h2>Three public certificates, already extracted.</h2>
+        <p class="section-intro">Switch between a clean digital file, a digital file the validator still sent to review, and a scan. Green means the field cleared. Amber means a person on our team would review it. Rose marks a miss, with the value from the certificate shown underneath.</p>
+
+        <div class="demo-toolbar" role="tablist" aria-label="Sample certificates" id="sample-tabs"></div>
+
+        <div class="demo-stage">
+          <figure class="cert-pane">
+            <div class="cert-toolbar">
+              <div id="cert-label"><strong>Certificate</strong></div>
+              <div class="zoom-btns">
+                <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+                <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+              </div>
+            </div>
+            <div class="cert-frame" id="cert-frame">
+              <img id="cert-image" alt="Public ACORD 25 certificate preview" src="images/coi_16.jpg" width="1275" height="1650">
+            </div>
+            <figcaption class="cert-caption" id="cert-caption"></figcaption>
+          </figure>
+
+          <aside class="extract-pane" aria-live="polite">
+            <div class="extract-head">
+              <p class="extract-kicker" id="extract-kicker">Extracted fields</p>
+              <h3 id="extract-title">Certificate</h3>
+              <div class="status-banner" id="status-banner"></div>
+              <p class="review-summary" id="review-summary"></p>
+              <div class="flag-chips" id="flag-chips"></div>
+            </div>
+            <div class="field-list" id="field-list"></div>
+            <div class="legend">
+              <span><i class="swatch swatch-ok" aria-hidden="true"></i> Cleared</span>
+              <span><i class="swatch swatch-flag" aria-hidden="true"></i> Flagged for a person</span>
+              <span><i class="swatch swatch-miss" aria-hidden="true"></i> Miss or mismatch</span>
+              <span>Confidence is the document’s extraction confidence, lowered on flagged fields.</span>
+            </div>
+          </aside>
+        </div>
+        <p class="demo-note">This page is a static demo with precomputed results. It does not accept uploads, and it does not send certificates anywhere.</p>
+      </div>
+    </section>
+
+    <section class="section" id="results">
+      <div class="wrap">
+        <p class="section-kicker">Benchmark</p>
+        <h2>What we have actually tested.</h2>
+        <p class="section-intro">Two runs on 80 real, publicly posted ACORD 25 certificates, November 22, 2026, using only free local tools — no paid AI APIs. These are lab results on public forms, not a production guarantee on an agency’s own book.</p>
+
+        <div class="results-grid">
+          <article class="result-card">
+            <h3>Test 1</h3>
+            <p class="sub">44 certificates &nbsp;·&nbsp; 1,039 fields</p>
+            <table class="kv">
+              <tr><th>Field-level accuracy</th><td>93.2% (968 / 1,039)</td></tr>
+              <tr><th>Dates and policy numbers</th><td>98.5–99.3%</td></tr>
+              <tr><th>Dollar limits</th><td>93.7%</td></tr>
+              <tr><th>Straight-through (clean, unflagged)</th><td>36.4% (16 of 44)</td></tr>
+              <tr><th>Flagged for a person</th><td>34.1% (15 of 44)</td></tr>
+              <tr><th>Critical error that slipped past the flags</th><td>2.3% (1 of 44)</td></tr>
+            </table>
+          </article>
+          <article class="result-card">
+            <h3>Test 2</h3>
+            <p class="sub">36 certificates &nbsp;·&nbsp; 25 digital, 11 scanned &nbsp;·&nbsp; 1,282 fields</p>
+            <table class="kv">
+              <tr><th>Field-level accuracy</th><td>90.3% (1,158 / 1,282)</td></tr>
+              <tr><th>Digital PDFs</th><td>100% (876 / 876)</td></tr>
+              <tr><th>Scanned copies</th><td>69.5% (282 / 406)</td></tr>
+              <tr><th>Straight-through</th><td>50% overall; 72% on digital</td></tr>
+              <tr><th>Flagged for a person</th><td>50% (18 of 36); 100% of scans</td></tr>
+              <tr><th>Critical error that slipped past the flags</th><td>0 of 36</td></tr>
+            </table>
+          </article>
+        </div>
+        <div class="callout">
+          <strong>Scans are the failure mode.</strong> Faint grid lines and single boxed letters still trip free OCR, which is why every flagged field — and every scan — goes to a person on our team before delivery. The free 30-day pilot is how we measure the same figures on an agency’s own book.
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pilot">
+      <div class="wrap">
+        <p class="section-kicker">Start here</p>
+        <h2>A free 30-day pilot, then a conversation about the numbers.</h2>
+        <div class="pilot-grid">
+          <div>
+            <ul class="checklist">
+              <li>Up to <strong>50</strong> certificates and endorsements (in the UK: evidence-of-cover certificates and mid-term adjustments).</li>
+              <li>No fee. The agency can stop at any time.</li>
+              <li>A person on our team reviews every certificate during the pilot, and reviews every flagged field before delivery after that.</li>
+              <li>We measure three things together: <strong>hours saved</strong>, <strong>field accuracy</strong>, and <strong>flag rate</strong>.</li>
+              <li>At the end of 30 days we walk through the numbers. There is no obligation to continue.</li>
+            </ul>
+          </div>
+          <aside class="aside-card">
+            <h3>What the pilot is for</h3>
+            <p>This is a pre-launch back-office service. There are no paying customers yet. The pilot is how we find out whether the tool saves time on your book, not a sales script with a hidden conversion step.</p>
+            <p>Founding rates on the paid plans apply if an agency starts within 14 days of finishing the pilot.</p>
+            <a class="btn btn-primary" href="#contact">Talk to Kevin Fairley</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plans">
+      <div class="wrap">
+        <p class="section-kicker">After the pilot</p>
+        <h2>Three month-to-month plans.</h2>
+        <p class="section-intro">Priced in US dollars. UK firms can be invoiced in pounds sterling at the Bank of England rate on the invoice date. Each certificate, endorsement, or mid-term adjustment counts as one included task. Founding rates for agencies that start a paid plan within 14 days of a completed pilot.</p>
+        <div class="plans">
+          <article class="plan">
+            <p class="plan-name">Starter</p>
+            <p class="plan-price">$299<span>/month</span></p>
+            <p class="plan-unit">Up to 100 tasks · $2.99 each included</p>
+            <ul>
+              <li>A person reviews every flagged certificate before delivery</li>
+              <li>Review of unflagged digital files available as an add-on</li>
+              <li>Target turnaround: next business day</li>
+              <li>Monthly written metrics summary</li>
+            </ul>
+          </article>
+          <article class="plan is-featured">
+            <p class="plan-name">Growth</p>
+            <p class="plan-price">$599<span>/month</span></p>
+            <p class="plan-unit">Up to 250 tasks · $2.40 each included</p>
+            <ul>
+              <li>A person reviews every flagged certificate before delivery</li>
+              <li>Review of unflagged digital files available as an add-on</li>
+              <li>Target turnaround: same business day if received by 2:00 p.m. Pacific</li>
+              <li>Monthly written metrics summary</li>
+            </ul>
+          </article>
+          <article class="plan">
+            <p class="plan-name">Scale</p>
+            <p class="plan-price">$999<span>/month</span></p>
+            <p class="plan-unit">Up to 500 tasks · $2.00 each included</p>
+            <ul>
+              <li>A person reviews every flagged certificate before delivery</li>
+              <li>A person checks every file, including unflagged digital ones</li>
+              <li>Target turnaround: same business day</li>
+              <li>Monthly written summary plus a short call</li>
+            </ul>
+          </article>
+        </div>
+        <p class="fine-print">Additional tasks above the plan are $4 each. Unused tasks do not roll over. Optional 100% review on Starter or Growth is +$150 a month. Scan-heavy books are quoted before a paid start, because in Test 2 every scan needed a person. Volume above 500 tasks a month is a custom quote. Plans are month to month, with 14 days’ written notice to cancel or change tiers. This site is not a formal offer of a service-level agreement, legal advice on endorsement wording, AMS write-back, or a completed SOC 2 or ISO certification.</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <p class="section-kicker">Contact</p>
+        <h2>Start with the person who built it.</h2>
+        <p class="contact-name">Kevin Fairley</p>
+        <p class="contact-role">Founder &nbsp;·&nbsp; Los Angeles</p>
+        <p class="section-intro" style="margin-bottom:0">To start a free 30-day pilot, or to ask about the benchmark, get in touch with Kevin Fairley. A public contact email can be added here before this site is published.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Kevin Fairley. ACORD® is a registered trademark of ACORD Corporation. This demo is not affiliated with ACORD.</p>
+      <p>Public certificates, precomputed results, no uploads. Not for public circulation until approved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

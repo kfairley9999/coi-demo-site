@@ -1,0 +1,13 @@
+These fonts are included for local and GitHub Pages use.
+
+Fraunces
+  Copyright 2020 The Fraunces Project Authors
+  Licensed under the SIL Open Font License, Version 1.1
+  https://github.com/undercasetype/Fraunces
+  https://scripts.sil.org/OFL
+
+IBM Plex Sans
+  Copyright 2018 IBM Corp. and IBM Plex project authors
+  Licensed under the SIL Open Font License, Version 1.1
+  https://github.com/IBM/plex
+  https://scripts.sil.org/OFL
