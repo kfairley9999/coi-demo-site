@@ -3,7 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Live demo of Kevin Fairley’s ACORD 25 certificate-of-insurance extraction tool. Public sample certificates, precomputed fields, honest benchmark results, and a free 30-day pilot.">
+  <meta name="description" content="Live demo of Kevin Fairley’s ACORD 25 certificate-of-insurance extraction tool. Official test (corrections OFF, November 22, 2026): 78.7% field accuracy on 22 fresh public certificates (12 digital, 10 scans). Digital 95.4%, scans 61.5%. Straight-through 27.3%. Silent errors 1 of 22.">
+  <meta property="og:title" content="Certificate extraction — Kevin Fairley">
+  <meta property="og:description" content="Official ACORD 25 test (corrections OFF): 78.7% field accuracy on 22 fresh public certificates. Digital 95.4%, scans 61.5%. Straight-through 27.3%. Silent errors 1 of 22.">
+  <meta property="og:url" content="https://kfairy9999.github.io/coi-demo-site/">
+  <meta property="og:image" content="https://kfairy9999.github.io/coi-demo-site/screenshots/demo-hero.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Certificate extraction — Kevin Fairley">
+  <meta name="twitter:description" content="Official ACORD 25 test (corrections OFF): 78.7% field accuracy on 22 fresh public certificates. Digital 95.4%, scans 61.5%. Straight-through 27.3%. Silent errors 1 of 22.">
+  <meta name="twitter:image" content="https://kfairy9999.github.io/coi-demo-site/screenshots/demo-hero.png">
   <title>Certificate extraction — Kevin Fairley</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="css/styles.css">
@@ -29,27 +38,27 @@
       <div class="wrap">
         <p class="eyebrow">ACORD 25 &nbsp;·&nbsp; Kevin Fairley &nbsp;·&nbsp; Los Angeles</p>
         <h1>Read the certificate.<br><em>Trust the flags.</em></h1>
-        <p class="lede">A live look at an ACORD 25 extraction tool built for independent insurance agencies. The fields below were extracted from publicly posted certificates with free local tools — no file upload, and no client data on this page. Digital forms come through clean. Scans are flagged so a person on our team can review them.</p>
+        <p class="lede">A live look at an ACORD 25 extraction tool built for independent insurance agencies. The fields below were extracted from publicly posted certificates with free local tools — no file upload, and no client data on this page. In the official test, digital field accuracy was 95.4%. Scans are flagged so a person on our team can review them.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#demo">Open the live demo</a>
           <a class="btn btn-ghost" href="#results">See the benchmark</a>
         </div>
         <dl class="stat-strip">
           <div>
-            <dt>93.2%</dt>
-            <dd>Field accuracy, Test 1, 44 public certificates</dd>
+            <dt>78.7%</dt>
+            <dd>Field accuracy, official test, 22 public certificates</dd>
           </div>
           <div>
-            <dt>90.3%</dt>
-            <dd>Field accuracy, Test 2, 36 certificates</dd>
+            <dt>95.4%</dt>
+            <dd>Accuracy on born-digital PDFs</dd>
           </div>
           <div>
-            <dt>100%</dt>
-            <dd>Accuracy on born-digital PDFs in Test 2</dd>
-          </div>
-          <div>
-            <dt>69.5%</dt>
+            <dt>61.5%</dt>
             <dd>Accuracy on scans — every scan flagged for a person</dd>
+          </div>
+          <div>
+            <dt>27.3%</dt>
+            <dd>Straight-through (6 of 22); 1 silent error</dd>
           </div>
         </dl>
       </div>
@@ -103,31 +112,29 @@
       <div class="wrap">
         <p class="section-kicker">Benchmark</p>
         <h2>What we have actually tested.</h2>
-        <p class="section-intro">Two runs on 80 real, publicly posted ACORD 25 certificates, November 22, 2026, using only free local tools — no paid AI APIs. These are lab results on public forms, not a production guarantee on an agency’s own book.</p>
+        <p class="section-intro">Official ACORD 25 test on 22 fresh public certificates (12 digital, 10 scanned), November 22, 2026, 5:37 PM PT, using only free local tools — no paid AI APIs. The official score is the extractor with the correction step OFF. Memory was trained only on earlier labeled data, not this set. These are lab results on public forms, not a production guarantee on an agency’s own book.</p>
 
         <div class="results-grid">
           <article class="result-card">
-            <h3>Test 1</h3>
-            <p class="sub">44 certificates &nbsp;·&nbsp; 1,039 fields</p>
+            <h3>Official test</h3>
+            <p class="sub">Corrections OFF &nbsp;·&nbsp; 22 certificates &nbsp;·&nbsp; 774 fields</p>
             <table class="kv">
-              <tr><th>Field-level accuracy</th><td>93.2% (968 / 1,039)</td></tr>
-              <tr><th>Dates and policy numbers</th><td>98.5–99.3%</td></tr>
-              <tr><th>Dollar limits</th><td>93.7%</td></tr>
-              <tr><th>Straight-through (clean, unflagged)</th><td>36.4% (16 of 44)</td></tr>
-              <tr><th>Flagged for a person</th><td>34.1% (15 of 44)</td></tr>
-              <tr><th>Critical error that slipped past the flags</th><td>2.3% (1 of 44)</td></tr>
+              <tr><th>Field-level accuracy</th><td>78.7% (609 / 774)</td></tr>
+              <tr><th>Straight-through (clean, unflagged)</th><td>27.3% (6 of 22)</td></tr>
+              <tr><th>Flagged for a person</th><td>68.2% (15 of 22)</td></tr>
+              <tr><th>Silent errors</th><td>1 of 22</td></tr>
+              <tr><th>95% CI (document bootstrap)</th><td>69.3–87.6%</td></tr>
             </table>
           </article>
           <article class="result-card">
-            <h3>Test 2</h3>
-            <p class="sub">36 certificates &nbsp;·&nbsp; 25 digital, 11 scanned &nbsp;·&nbsp; 1,282 fields</p>
+            <h3>Digital vs scans</h3>
+            <p class="sub">12 digital &nbsp;·&nbsp; 10 scanned</p>
             <table class="kv">
-              <tr><th>Field-level accuracy</th><td>90.3% (1,158 / 1,282)</td></tr>
-              <tr><th>Digital PDFs</th><td>100% (876 / 876)</td></tr>
-              <tr><th>Scanned copies</th><td>69.5% (282 / 406)</td></tr>
-              <tr><th>Straight-through</th><td>50% overall; 72% on digital</td></tr>
-              <tr><th>Flagged for a person</th><td>50% (18 of 36); 100% of scans</td></tr>
-              <tr><th>Critical error that slipped past the flags</th><td>0 of 36</td></tr>
+              <tr><th>Digital PDFs</th><td>95.4% (374 / 392)</td></tr>
+              <tr><th>Scanned copies</th><td>61.5% (235 / 382)</td></tr>
+              <tr><th>Digital straight-through</th><td>50.0% (6 of 12)</td></tr>
+              <tr><th>Scans flagged for a person</th><td>100% of scans (0% straight-through)</td></tr>
+              <tr><th>95% CI, digital / scans</th><td>89.6–99.7% / 51.0–71.0%</td></tr>
             </table>
           </article>
         </div>
@@ -201,7 +208,7 @@
             </ul>
           </article>
         </div>
-        <p class="fine-print">Additional tasks above the plan are $4 each. Unused tasks do not roll over. Optional 100% review on Starter or Growth is +$150 a month. Scan-heavy books are quoted before a paid start, because in Test 2 every scan needed a person. Volume above 500 tasks a month is a custom quote. Plans are month to month, with 14 days’ written notice to cancel or change tiers. This site is not a formal offer of a service-level agreement, legal advice on endorsement wording, AMS write-back, or a completed SOC 2 or ISO certification.</p>
+        <p class="fine-print">Additional tasks above the plan are $4 each. Unused tasks do not roll over. Optional 100% review on Starter or Growth is +$150 a month. Scan-heavy books are quoted before a paid start, because in the official test every scan needed a person. Volume above 500 tasks a month is a custom quote. Plans are month to month, with 14 days’ written notice to cancel or change tiers. This site is not a formal offer of a service-level agreement, legal advice on endorsement wording, AMS write-back, or a completed SOC 2 or ISO certification.</p>
       </div>
     </section>
 

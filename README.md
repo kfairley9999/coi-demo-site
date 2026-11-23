@@ -10,14 +10,16 @@ Live site: [https://kfairy9999.github.io/coi-demo-site/](https://kfairy9999.gith
   - **Resideo Technologies** — born-digital, straight-through, 100% of scored fields correct
   - **Waverly at South Beach** — born-digital, 100% correct, still flagged because the auto combined single limit is blank on the form
   - **Amazing Air** — scanned, 90% accurate, three misses all flagged for a person
-- Honest benchmark figures from the November 22, 2026 lab runs:
-  - Test 1: **93.2%** field accuracy, n=44
-  - Test 2: **90.3%** field accuracy, n=36; digital **100%**; scans **69.5%**; every scan flagged for human review
+- Official ACORD 25 test figures (corrections OFF, November 22, 2026, 5:37 PM PT, commit d9034ee):
+  - Overall field accuracy **78.7%** (609 / 774) on **22** fresh public certificates (12 digital, 10 scans)
+  - Digital **95.4%** (374 / 392); scans **61.5%** (235 / 382)
+  - Straight-through **27.3%** (6 / 22); flag rate **68.2%** (100% of scans); silent errors **1 of 22**
+  - Official score is the extractor with the correction step OFF. Memory was not trained on this set.
 - The free 30-day pilot and the **$299 / $599 / $999** month-to-month plans
 - A person on our team reviews flagged fields before delivery
 - No file uploads, no server, no tracking, no client PII intake
 
-Source data came from public ACORD 25 filings used in the November 22, 2026 benchmark runs. Contact: [kfairley9999@gmail.com](mailto:kfairley9999@gmail.com).
+The three demo certificates are public ACORD 25 filings. Site-wide accuracy figures are from the official November 22, 2026 test (corrections OFF), not the earlier lab runs. Contact: [kfairley9999@gmail.com](mailto:kfairley9999@gmail.com).
 
 ## Preview locally
 
