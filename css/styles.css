@@ -792,3 +792,51 @@ a:hover { color: var(--seal-hover); }
   html { scroll-behavior: auto; }
   .btn, .sample-tab { transition: none; }
 }
+
+
+/* Walkthrough video & lead capture form */
+.coi-video-card {
+  margin-top: 24px;
+  background: var(--paper-2, #fff);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 14px;
+}
+.coi-video-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  background: #14100d;
+  aspect-ratio: 16 / 9;
+}
+.coi-video-cap {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  color: var(--ink-mute);
+}
+.coi-form {
+  margin-top: 22px;
+  background: var(--paper-2, #fff);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 22px;
+  max-width: 720px;
+}
+.coi-form-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.coi-field { display: flex; flex-direction: column; gap: 6px; }
+.coi-field.full { grid-column: 1 / -1; }
+.coi-field label { font-size: 0.85rem; font-weight: 600; color: var(--ink); }
+.coi-field input, .coi-field textarea {
+  width: 100%; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--rule);
+  font: inherit; background: var(--paper, #fbf6ef); color: var(--ink);
+}
+.coi-form-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
+.coi-form-note { font-size: 0.85rem; color: var(--ink-mute); }
+.p-form-status { margin-top: 14px; padding: 14px; border-radius: 10px; background: var(--paper, #f4ebdf); border: 1px solid var(--rule); display: none; font-size: 0.9rem; }
+.p-form-status.show { display: block; }
+.p-form-status pre { white-space: pre-wrap; font-size: 0.82rem; margin: 8px 0 0; }

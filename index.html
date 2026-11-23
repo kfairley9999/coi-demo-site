@@ -70,6 +70,14 @@
         <h2>Three public certificates, already extracted.</h2>
         <p class="section-intro">Switch between a clean digital file, a digital file the validator still sent to review, and a scan. Green means the field cleared. Amber means a person on our team would review it. Rose marks a miss, with the value from the certificate shown underneath.</p>
 
+        <div class="coi-video-card">
+          <video controls playsinline preload="metadata" poster="poster.jpg">
+            <source src="demo.webm" type="video/webm">
+            <source src="demo.mp4" type="video/mp4">
+          </video>
+          <p class="coi-video-cap">Walkthrough: switching between a clean digital ACORD 25, a flagged digital certificate, and a scanned certificate, plus the official 22-certificate benchmark.</p>
+        </div>
+
         <div class="demo-toolbar" role="tablist" aria-label="Sample certificates" id="sample-tabs"></div>
 
         <div class="demo-stage">
@@ -218,7 +226,36 @@
         <h2>Start with the person who built it.</h2>
         <p class="contact-name">Kevin Fairley</p>
         <p class="contact-role">Founder &nbsp;·&nbsp; Los Angeles</p>
-        <p class="section-intro" style="margin-bottom:0">To start a free 30-day pilot, or to ask about the benchmark, email <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a>.</p>
+        <p class="section-intro">To start a free 30-day pilot, or to ask about the benchmark, submit below or email <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a>.</p>
+        <form class="coi-form" data-lead-form data-product="ACORD 25 COI Extraction" data-recipient="kfairley9999@gmail.com" action="mailto:kfairley9999@gmail.com" method="post" enctype="text/plain">
+          <div class="coi-form-grid">
+            <div class="coi-field">
+              <label for="coi-name">Name</label>
+              <input id="coi-name" name="name" type="text" required autocomplete="name" placeholder="Jane Doe">
+            </div>
+            <div class="coi-field">
+              <label for="coi-company">Agency / MGA</label>
+              <input id="coi-company" name="company" type="text" autocomplete="organization" placeholder="Harbor Commercial Insurance">
+            </div>
+            <div class="coi-field">
+              <label for="coi-email">Email</label>
+              <input id="coi-email" name="email" type="email" required autocomplete="email" placeholder="you@agency.com">
+            </div>
+            <div class="coi-field">
+              <label for="coi-phone">Phone (optional)</label>
+              <input id="coi-phone" name="phone" type="tel" autocomplete="tel" placeholder="(555) 123-4567">
+            </div>
+            <div class="coi-field full">
+              <label for="coi-need">What do you need?</label>
+              <textarea id="coi-need" name="need" rows="3" required placeholder="Monthly COI/endorsement volume, % scans vs digital PDFs, and whether you want the free 30-day pilot (up to 50 certificates)."></textarea>
+            </div>
+          </div>
+          <div class="coi-form-actions">
+            <button class="btn btn-primary" type="submit">Start free 30-day pilot</button>
+            <span class="coi-form-note">Routes directly to kfairley9999@gmail.com</span>
+          </div>
+          <div class="p-form-status" data-form-status aria-live="polite"></div>
+        </form>
       </div>
     </section>
   </main>
@@ -231,5 +268,6 @@
   </footer>
 
   <script src="js/app.js" defer></script>
+  <script src="js/lead-form.js" defer></script>
 </body>
 </html>
