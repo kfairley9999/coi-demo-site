@@ -25,6 +25,15 @@
     var e=f.querySelector('.ferr'); if(!e){e=d.createElement('span');e.className='ferr';e.id=el.id+'-err';f.appendChild(e)}
     e.textContent=m; el.setAttribute('aria-invalid',m?'true':'false'); if(m) el.setAttribute('aria-describedby',e.id); else el.removeAttribute('aria-describedby');
   }
+  // Email copy to Kevin via FormSubmit (free). Sent from the browser because FormSubmit blocks Cloudflare's servers.
+  function emailCopy(data,id){
+    try{
+      var p={_subject:'New COI pilot lead: '+data.name+' — '+data.company,_template:'table',_captcha:'false',_replyto:data.email,
+        Name:data.name,'Work email':data.email,Company:data.company,Role:data.role,'Certificates per month':data.volume,Phone:data.phone||'—',Message:data.message||'—',
+        Source:[data.utm_source,data.utm_medium,data.utm_campaign].filter(Boolean).join(' / ')||'(direct)',Referrer:data.referrer||'—','Lead ID':id||'(not stored — Worker unreachable)'};
+      return fetch('https://formsubmit.co/ajax/'+TO,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(p),keepalive:true}).then(function(r){return r.ok},function(){return false});
+    }catch(e){return Promise.resolve(false)}
+  }
   function mailto(data){
     var body=['Name: '+data.name,'Work email: '+data.email,'Company: '+data.company,'Role: '+data.role,'Certificates per month: '+data.volume,'Phone: '+(data.phone||'—'),'','Message:',data.message||'—'].join('\n');
     return 'mailto:'+TO+'?subject='+encodeURIComponent('COI pilot request — '+(data.company||data.name))+'&body='+encodeURIComponent(body);
@@ -40,21 +49,23 @@
       var data={}; new FormData(form).forEach(function(v,k){data[k]=String(v).trim()});
       for(var k in attr) data[k]=attr[k];
       data.page=location.href.slice(0,300); data.form=form.id||'coi'; data._t=Date.now()-t0;
-      btn.disabled=true; var label=btn.innerHTML; btn.textContent='Sending…'; st.className='fstatus'; st.textContent='';
+      var invalid=false; btn.disabled=true; var label=btn.innerHTML; btn.textContent='Sending…'; st.className='fstatus'; st.textContent='';
       fetch(ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data),mode:'cors'})
         .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})})
         .then(function(res){
           if(res.ok&&res.j&&res.j.ok){
+            if(res.j.id!=='ok') emailCopy(data,res.j.id);
             form.classList.add('sent');
             form.innerHTML='<div class="fdone" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><h3>Thanks, '+(data.name.split(' ')[0].replace(/[<>&"]/g,''))+' — you’re in.</h3><p>Kevin will email you within 1 business day to set up your free 30-day pilot (up to 50 certificates). Questions now? <a href="mailto:'+TO+'">'+TO+'</a></p></div>';
             var dn=form.querySelector('.fdone'); if(dn) dn.focus();
             try{w.dataLayer&&w.dataLayer.push({event:'generate_lead',form:data.form})}catch(e){}
             return;
           }
-          if(res.j&&res.j.errors){Object.keys(res.j.errors).forEach(function(n){var el=form.querySelector('[name='+n+']');if(el) setErr(el,res.j.errors[n])})}
+          if(res.j&&res.j.errors){invalid=true;Object.keys(res.j.errors).forEach(function(n){var el=form.querySelector('[name='+n+']');if(el) setErr(el,res.j.errors[n])})}
           throw new Error((res.j&&res.j.error)||'failed');
         })
         .catch(function(){
+          if(!invalid) emailCopy(data,'');
           btn.disabled=false; btn.innerHTML=label; st.className='fstatus err';
           st.innerHTML='We couldn’t send that just now. <a href="'+mailto(data).replace(/"/g,'&quot;')+'">Email it to Kevin instead</a> — your details are filled in.';
         });
