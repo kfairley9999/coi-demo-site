@@ -2,7 +2,7 @@
 
 Static site for **Kevin Fairley’s** certificate-of-insurance draft service, built for Los Angeles independent agencies.
 
-Live site: [https://kfairy9999.github.io/coi-demo-site/](https://kfairy9999.github.io/coi-demo-site/)
+Live site: [https://kfairley9999.github.io/coi-demo-site/](https://kfairley9999.github.io/coi-demo-site/)
 
 **Offer:** We prepare COI drafts from your records, for approval by your designated reviewer. We don't make coverage decisions.
 
