@@ -52,15 +52,16 @@
 <h1>COI drafts from your records. <span class="grad">Your reviewer approves them.</span></h1>
 <p class="lede offer-line"><strong>The offer:</strong> We prepare COI drafts from your records, for approval by your designated reviewer. We don’t make coverage decisions.</p>
 <p class="who"><strong>Built for</strong> independent insurance agencies in Los Angeles that handle ACORD 25 certificates of insurance. This is a pre-launch back-office service. There are no paying customers yet. This page does not accept uploads and does not store your files.</p>
-<div class="ctas"><a class="btn btn-primary btn-lg" href="#pilot">Start a free 30-day pilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="btn btn-ghost btn-lg" href="#live">Try the demo</a></div>
+<div class="ctas"><a class="btn btn-primary btn-lg" href="#pilot" data-cta="hero">Start a free 30-day pilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a><a class="btn btn-ghost btn-lg" href="#video">Watch the 60-second demo</a></div>
+<p class="hero-assure">Free for up to 50 certificates · No card · Kevin replies within 1 business day</p>
 </div>
 <div class="metrics"><div class="wrap"><ul>
-<li><b>82.2%</b><span>Critical-field accuracy, official test, 22 public ACORD 25s, corrections off</span></li>
+<li><b>82.2%</b><span>Critical-field accuracy, official internal test, 22 public ACORD 25s, corrections off</span></li>
 <li><b>78.7%</b><span>Overall field accuracy (609 / 774 fields) on that same set</span></li>
 <li><b>95.4% / 61.5%</b><span>Digital vs scans — every scan was flagged for a person</span></li>
 <li><b>27.3%</b><span>Straight-through (6 of 22); 1 leaked error in 22</span></li>
 </ul>
-<p class="metrics-note">Lab results on public forms, not a production guarantee on an agency’s own book. After the first lock of this 22-certificate set, two extractor rules were changed because of errors seen on it, so it is not a never-tuned holdout. A clean holdout is being prepared for November 29, 2026.</p>
+<p class="metrics-note">Internal tests by Kevin Fairley on public forms, not an independent audit. Lab results, not a production guarantee on an agency’s own book. After the first lock of this 22-certificate set, two extractor rules were changed because of errors seen on it, so it is not a never-tuned holdout. A clean holdout is being prepared for November 29, 2026.</p>
 </div></div>
 </section>
 
@@ -105,12 +106,9 @@
         </div>
         <p class="demo-note">This page is a static demo with precomputed results. It does not accept uploads, and it does not send certificates anywhere.</p></div>
 
-<figure class="walkthrough rv">
-<video controls playsinline preload="none" poster="poster.jpg" width="1280" height="720" aria-label="Optional walkthrough of the ACORD 25 extraction demo">
-<source src="demo.webm" type="video/webm">
-<source src="demo.mp4" type="video/mp4">
-</video>
-<figcaption>Optional walkthrough: a clean digital ACORD 25, a flagged digital certificate, and a scanned certificate. Plays only if you press play. Nothing is uploaded.</figcaption>
+<figure class="walkthrough rv" id="video">
+<div class="yt" data-yt="J19RP9mMEMc"><button type="button" class="yt-btn" aria-label="Play the 60-second COI demo video (YouTube)"><picture><source srcset="images/yt-poster.webp" type="image/webp"><img src="images/yt-poster.jpg" loading="lazy" decoding="async" width="960" height="540" alt="Demo video: checking an ACORD 25 against your requirements"></picture><span class="yt-play" aria-hidden="true"><svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#e11d48"/><path d="M45 24 27 14v20" fill="#fff"/></svg></span></button></div>
+<figcaption>60-second demo (YouTube). The player loads only when you press play. <a href="https://youtu.be/J19RP9mMEMc" target="_blank" rel="noopener">Open on YouTube</a>.</figcaption>
 </figure>
 </div></section>
 
@@ -160,7 +158,7 @@
 <section class="sec sec-alt" id="privacy"><div class="wrap">
 <div class="head rv"><span class="kicker">Privacy</span><h2>How data is handled, in plain terms.</h2><p>This matches what the site and a pilot actually do today. Nothing below is a SOC 2 or formal privacy certification.</p></div>
 <div class="cards2">
-<article class="card rv"><h3>On this website</h3><p>This is a static demo. It does not accept file uploads, does not create an account, and does not send certificates to a server. The inquiry form below is hosted by Tally, with an email fallback to kfairley9999@gmail.com. Certificate files are not stored here, and there is no advertising pixel on this page.</p></article>
+<article class="card rv"><h3>On this website</h3><p>This is a static demo. It does not accept file uploads, does not create an account, and does not send certificates to a server. The pilot form below sends only what you type (name, work email, company, role, volume, optional phone and message, plus the ad or link that brought you here) to Kevin’s own lead list on Cloudflare, and an email copy to kfairley9999@gmail.com through FormSubmit. It is never sold or shared. Ask and it is deleted. Certificate files are not stored here, and there is no advertising pixel on this page.</p></article>
 <article class="card rv"><h3>During a pilot</h3><p>You would send certificates from your own records by email, or another method we agree on in writing. I would use those files only to prepare drafts for your designated reviewer and to measure the pilot (hours, accuracy, flag rate). I will not use a client’s files to tune the extractor before telling you, and I will not make coverage decisions or issue certificates from them.</p></article>
 </div>
 </div></section>
@@ -176,13 +174,22 @@
 </div></div></section>
 
 <section class="sec cta-sec" id="pilot"><div class="wrap cta-grid">
-<div class="cta-copy rv"><span class="kicker">Contact</span><h2>Start with the person who built it.</h2><p>Kevin Fairley, founder, Los Angeles. To start a free 30-day pilot, or to ask about the benchmark, submit below or email <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a>.</p><ol class="next"><li><b>1</b><span>Submit the form below — or email if you prefer. Kevin reads every note.</span></li><li><b>2</b><span>Kevin replies personally to set up the pilot.</span></li><li><b>3</b><span>Up to 50 certificates, no fee, stop any time.</span></li></ol></div>
-<div class="form form-tally rv">
-<div class="tally-embed" data-tally-embed data-tally-src="https://tally.so/embed/EqxgrN?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&source=coi-demo-site" data-tally-title="Inquiry form — COI Extract">
-<button type="button" class="btn btn-primary btn-lg" data-tally-open>Start free 30-day pilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
-<p class="tally-ph fnote">The form opens here. It loads only when you ask for it, so the page stays fast.</p>
+<div class="cta-copy rv"><span class="kicker">Contact</span><h2>Start with the person who built it.</h2><p>Kevin Fairley, founder, Los Angeles. To start a free 30-day pilot, or to ask about the benchmark, use the form or email <a href="mailto:kfairley9999@gmail.com">kfairley9999@gmail.com</a>.</p><ol class="next"><li><b>1</b><span>Send the form — about 30 seconds. Kevin reads every one.</span></li><li><b>2</b><span>Kevin replies personally to set up the pilot.</span></li><li><b>3</b><span>Up to 50 certificates, no fee, stop any time.</span></li></ol></div>
+<form class="form rv" id="pilot-form" data-lead novalidate action="https://coi-leads.kfairley9999.workers.dev/lead" method="post">
+<h3 class="form-h">Start a free 30-day pilot</h3>
+<div class="fgrid">
+<div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required minlength="2" maxlength="120"></div>
+<div class="field"><label for="f-email">Work email</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="200"></div>
+<div class="field"><label for="f-co">Company</label><input id="f-co" name="company" autocomplete="organization" required minlength="2" maxlength="160"></div>
+<div class="field"><label for="f-role">I am a…</label><select id="f-role" name="role" required><option value="">Choose one</option><option>Insurance agency</option><option>Contractor</option><option>Property manager</option><option>Other</option></select></div>
+<div class="field"><label for="f-vol">Certificates per month</label><select id="f-vol" name="volume" required><option value="">Choose one</option><option>Under 25</option><option>25–100</option><option>100–500</option><option>500+</option><option>Not sure</option></select></div>
+<div class="field"><label for="f-phone">Phone <span class="opt">(optional)</span></label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40"></div>
+<div class="field full"><label for="f-msg">Anything we should know? <span class="opt">(optional)</span></label><textarea id="f-msg" name="message" rows="3" maxlength="2000"></textarea></div>
+<div class="hp" aria-hidden="true"><label for="f-web">Leave this empty</label><input id="f-web" name="website" tabindex="-1" autocomplete="off"></div>
 </div>
-<p class="fnote">Prefer email? <a href="mailto:kfairley9999@gmail.com">Write kfairley9999@gmail.com</a>.</p>
+<div class="factions"><button class="btn btn-primary btn-lg" type="submit">Start a free 30-day pilot<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button><p class="fnote">No card. Kevin replies within 1 business day. Prefer email? <a href="mailto:kfairley9999@gmail.com?subject=COI%20pilot">kfairley9999@gmail.com</a></p></div>
+<div class="fstatus" data-status role="status" aria-live="polite"></div>
+</form>
 </div></div></section>
 </main>
 <footer class="foot"><div class="wrap"><div class="foot-grid">
@@ -193,6 +200,7 @@
 </div><div class="foot-bot"><span>© <span id="year">2026</span> Kevin Fairley · Los Angeles. ACORD® is a registered trademark of ACORD Corporation. This demo is not affiliated with ACORD.</span><a href="#top">Back to top ↑</a></div></div></footer>
 <div class="mcta"><a class="btn btn-primary" href="#pilot">Start free pilot</a></div>
 <script src="js/lp.js" defer></script>
+<script src="js/lead.js" defer></script>
 <script src="js/app.js" defer></script>
 </body>
 </html>

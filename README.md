@@ -19,7 +19,8 @@ Live site: [https://kfairley9999.github.io/coi-demo-site/](https://kfairley9999.
   - Straight-through **27.3%** (6 / 22); flag rate **68.2%**; leaked (silent) errors **1 of 22**
   - After the first lock of this set, two extractor rules were changed because of errors on it, so these 22 are not a never-tuned holdout. Lab results are not a production guarantee.
 - A free 30-day pilot (up to 50 certificates) and month-to-month plans at **$299 / $599 / $999**
-- Contact is [kfairley9999@gmail.com](mailto:kfairley9999@gmail.com). There is no Tally form on this page. The site does not upload files or store form submissions.
+- Lead capture: a native pilot form (name, work email, company, role, monthly certificate volume, optional phone and message, plus UTM/referrer) posts to the `coi-leads` Cloudflare Worker (`https://coi-leads.kfairley9999.workers.dev/lead`), which stores every lead in the `coi-leads` D1 database and emails a copy to kfairley9999@gmail.com via FormSubmit. Honeypot + timing trap + per-IP rate limit. Mailto fallback if the request fails. Worker source and how to view leads: `/workspace/coi-leads/README.md` (box). The site does not upload certificate files.
+- Demo video is a YouTube facade (https://youtu.be/J19RP9mMEMc); no YouTube request until the visitor presses play.
 
 The three demo certificates are public ACORD 25 forms. Site-wide accuracy figures are from the official November 22, 2026 test (corrections OFF).
 
