@@ -546,3 +546,29 @@ table.data td{font-variant-numeric:tabular-nums;color:var(--ink-2)}
 @media (max-width:560px){.coi-demo .field-row{grid-template-columns:1fr 64px}.coi-demo .field-label{grid-column:1/-1;padding-top:0}}
 .coi-demo figure{margin:0}
 @media (max-width:900px){.coi-demo .extract-pane{height:auto!important}.coi-demo .field-list{max-height:62vh}}
+
+/* COI page: mobile nav, offer, metrics note, walkthrough */
+.nav{position:sticky}
+.nav-in{position:relative}
+.nav-menu{margin-left:auto;position:relative}
+.nav-menu>summary{list-style:none;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);font:600 14px/1 var(--sans);color:#fff}
+.nav-menu>summary::-webkit-details-marker{display:none}
+.nav-menu>summary::after{content:"";width:7px;height:7px;margin-left:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.nav-menu[open]>summary{background:rgba(255,255,255,.12)}
+.nav-menu nav{position:absolute;right:0;top:calc(100% + 8px);z-index:60;min-width:220px;display:grid;padding:8px;border-radius:16px;background:#111114;border:1px solid var(--dark-line);box-shadow:var(--sh-3)}
+.nav-menu nav a{display:block;padding:12px 14px;border-radius:10px;color:#e4e4e7;text-decoration:none;font-size:15px;font-weight:500}
+.nav-menu nav a:hover,.nav-menu nav a:focus-visible{background:rgba(255,255,255,.08);color:#fff}
+@media (min-width:900px){.nav-menu{display:none}}
+@media (max-width:899px){.nav-in .btn{display:none}}
+
+.hero .offer-line{max-width:46ch;font-size:clamp(1.12rem,2.8vw,1.38rem);line-height:1.45;color:#f4f4f5}
+.hero .offer-line strong{color:#fff;font-weight:700}
+.metrics-note{margin:0 auto;padding:8px 20px 28px;max-width:86ch;font-size:13.5px;line-height:1.55;color:var(--dark-muted);text-align:left}
+@media (min-width:900px){.metrics-note{text-align:center;padding-bottom:36px}}
+
+.walkthrough{margin:32px 0 0;padding:0;border:0}
+.walkthrough video{width:100%;height:auto;border-radius:var(--r-lg);background:#09090b;box-shadow:var(--sh-2);border:1px solid var(--line)}
+.walkthrough figcaption{margin-top:10px;font-size:14px;color:var(--muted);max-width:70ch}
+
+#privacy .card p{margin-top:10px;font-size:15px;color:var(--muted);line-height:1.6}
+#privacy .card h3{font-size:1.08rem}

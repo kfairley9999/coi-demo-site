@@ -48,5 +48,7 @@
       window.location.href=href;
     });
   });
+  d.querySelectorAll('.nav-menu a').forEach(function(a){a.addEventListener('click',function(){var det=a.closest('details');if(det) det.open=false})});
+  d.addEventListener('keydown',function(e){if(e.key==='Escape'){d.querySelectorAll('.nav-menu[open]').forEach(function(el){el.open=false})}});
   var y=d.getElementById('year'); if(y) y.textContent=String(new Date().getFullYear());
 })();
